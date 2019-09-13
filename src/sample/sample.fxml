@@ -30,9 +30,9 @@
                                        </font></Label>
                                     <Label layoutY="80.0" text="Ingresar cadena a convertir" />
                                     <Separator layoutY="70.0" prefWidth="500.0" />
-                                    <TextField fx:id="cad_warm1" layoutY="100.0" promptText="Ingrese cadena" />
+                                    <TextField id="cad_warm1" fx:id="cad_warm1" layoutY="100.0" promptText="Ingrese cadena" onKeyReleased="#last3" />
                                     <Label layoutY="135.0" text="Cadena convertida" />
-                                    <Label fx:id="rWarmup" layoutY="160.0" text="Label">
+                                    <Label id="reWarm1" fx:id="reWarm1" layoutY="160.0" text="Label">
                                        <font>
                                           <Font name="System Bold" size="13.0" />
                                        </font>
