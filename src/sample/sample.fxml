@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <TitledPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="526.0" text="Test 1 Ingenieria de Software">
         <content>
@@ -43,7 +44,15 @@
                       </Tab>
                       <Tab text="Warm up 2">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="6.0" prefHeight="36.0" prefWidth="479.0" text="Dada una variable String. Regresar una version donde todos los &quot;yak&quot; sean removidos" />
+                                    <Label layoutX="14.0" layoutY="69.0" prefHeight="17.0" prefWidth="150.0" text="Ingresar cadena convertir:" />
+                                    <TextField fx:id="cad_warm2" layoutX="15.0" layoutY="93.0" prefHeight="25.0" prefWidth="180.0" promptText="Cadena" />
+                                    <Label layoutX="15.0" layoutY="151.0" prefHeight="17.0" prefWidth="142.0" text="Cadena covertida:" />
+                                    <Button fx:id="btnYAK" layoutX="227.0" layoutY="93.0" mnemonicParsing="false" text="GO" />
+                                    <TextField fx:id="cad_warmup2" editable="false" layoutX="15.0" layoutY="174.0" prefHeight="25.0" prefWidth="181.0" />
+                                 </children></AnchorPane>
                         </content>
                       </Tab>
                         <Tab text="Logic 1">
@@ -69,7 +78,22 @@
                         </Tab>
                         <Tab text="Array 1">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" prefHeight="12.0" prefWidth="482.0" text="Comienza con 2 arreglos, a y b, de longitud 2. Considere el valor de la suma de cada" />
+                                    <Label layoutX="14.0" layoutY="31.0" prefHeight="17.0" prefWidth="486.0" text="arreglo. Regrese el arreglo con la suma mas grande. En caso de empate regrese a" />
+                                    <TextField fx:id="A1" layoutX="14.0" layoutY="97.0" prefHeight="25.0" prefWidth="39.0" promptText="1" />
+                                    <Label layoutX="14.0" layoutY="77.0" text="A:" />
+                                    <Label layoutX="169.0" layoutY="77.0" text="B:" />
+                                    <TextField fx:id="A2" layoutX="56.0" layoutY="97.0" prefHeight="25.0" prefWidth="40.0" promptText="2" />
+                                    <TextField fx:id="B1" layoutX="169.0" layoutY="97.0" prefHeight="25.0" prefWidth="36.0" promptText="1" />
+                                    <TextField fx:id="B2" layoutX="213.0" layoutY="97.0" prefHeight="25.0" prefWidth="33.0" promptText="2" />
+                                    <Button fx:id="btnGO" layoutX="293.0" layoutY="97.0" mnemonicParsing="false" text="GO" />
+                                    <Label layoutX="11.0" layoutY="170.0" prefHeight="17.0" prefWidth="87.0" text="Suma Mayor:" />
+                                    <TextField fx:id="RR1" editable="false" layoutX="11.0" layoutY="195.0" prefHeight="25.0" prefWidth="37.0" />
+                                    <TextField fx:id="RR2" editable="false" layoutX="56.0" layoutY="195.0" prefHeight="25.0" prefWidth="41.0" />
+                                    <TextField fx:id="R3" editable="false" layoutX="113.0" layoutY="195.0" prefHeight="25.0" prefWidth="83.0" />
+                                 </children></AnchorPane>
                            </content>
                         </Tab>
                         <Tab text="Map 1">
