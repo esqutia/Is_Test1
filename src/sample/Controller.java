@@ -14,9 +14,9 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     @FXML
-    TextField cad_warm1,cad_warm2,A1,A2,B1,B2,cad_warmup2,RR1,RR2,R3;
+    TextField cad_warm1,cad_warm2,A1,A2,B1,B2,cad_warmup2,RR1,RR2,R3,ioq1,ioq2,ioq3;
     @FXML
-    Label reWarm1;
+    Label reWarm1,reIoq;
     @FXML
     Button btnGO,btnYAK;
 
@@ -60,5 +60,15 @@ public class Controller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         btnYAK.setOnAction(handler);
         btnGO.setOnAction(handler);
+    }
+
+    public void logic1(ActionEvent actionEvent) {
+        int x=Integer.parseInt(ioq1.getText());
+        int y=Integer.parseInt(ioq1.getText());
+        int z=Integer.parseInt(ioq1.getText());
+        Logic1 obj=new Logic1();
+        boolean texto=obj.inOrderEqual(x,y,z,true);
+        String re=String.valueOf(texto);
+        reIoq.setText(re);
     }
 }

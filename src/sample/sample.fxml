@@ -63,7 +63,19 @@
                                       <panes>
                                         <TitledPane text="In Order Equal">
                                           <content>
-                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label prefHeight="69.0" prefWidth="500.0" text="Ingrese tres valores enteros, regresar VERDADERO si estan incrementando, como 2 5 11 o 5 6 , pero no 6 5 7 o 5 5 7. De cualquier modo las igualdades son aceptadas como 5 5 7 o 5 5 5." wrapText="true" />
+                                                      <TextField fx:id="ioq1" layoutX="10.0" layoutY="80.0" prefHeight="27.0" prefWidth="81.0" />
+                                                      <TextField fx:id="ioq2" layoutX="100.0" layoutY="80.0" prefHeight="27.0" prefWidth="81.0" />
+                                                      <TextField fx:id="ioq3" layoutX="190.0" layoutY="80.0" prefHeight="27.0" prefWidth="81.0" />
+                                                      <Button fx:id="ioq" layoutX="289.0" layoutY="80.0" mnemonicParsing="false" text="Calcular" onAction="#logic1"/>
+                                                      <Label fx:id="reIoq" layoutX="20.0" layoutY="120.0" text="Label" wrapText="true">
+                                                         <font>
+                                                            <Font size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children></AnchorPane>
                                           </content>
                                         </TitledPane>
                                         <TitledPane text="Teen Sum">
