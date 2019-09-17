@@ -14,11 +14,11 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     @FXML
-    TextField cad_warm1,cad_warm2,A1,A2,B1,B2,cad_warmup2,RR1,RR2,R3,ioq1,ioq2,ioq3;
+    TextField cad_warm1,cad_warm2,A1,A2,B1,B2,cad_warmup2,RR1,RR2,R3,ioq1,ioq2,ioq3,arraygm;
     @FXML
-    Label reWarm1,reIoq;
+    Label reWarm1,reIoq, labelgm;
     @FXML
-    Button btnGO,btnYAK;
+    Button btnGO,btnYAK,gogm;
 
 
     public void last3(KeyEvent keyEvent) {
@@ -72,7 +72,15 @@ public class Controller implements Initializable {
         reIoq.setText(re);
     }
 
-    public void lo(){
+    public void gogm(){
+        String aux = arraygm.getText();
+        int[] entrada = new int[aux.length()];
+
+        for (int i = 0; i<entrada.length;i++){
+            entrada[i] = Integer.parseInt(aux.substring(i,i+1));
+        }
+        Warmup2 wu = new Warmup2();
+        labelgm.setText(""+wu.array667(entrada));
 
     }
 }
