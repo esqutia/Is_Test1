@@ -71,4 +71,8 @@ public class Controller implements Initializable {
         String re=String.valueOf(texto);
         reIoq.setText(re);
     }
+
+    public void lo(){
+
+    }
 }
