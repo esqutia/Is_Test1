@@ -6,10 +6,6 @@ public class Logic1 {
         if (a<b && a<c && b<c && !equalOk){
             return true;
         }
-        if(a<=b && a<=c && b<=c && equalOk){
-            return true;
-
-        }
-        return false;
+        return a <= b && a <= c && b <= c && equalOk;
     }
 }
