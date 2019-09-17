@@ -13,6 +13,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
@@ -63,7 +64,20 @@
                                                 </AnchorPane>
                                           </content>
                                         </TitledPane>
-                                        <TitledPane animated="false" text="untitled 2" />
+                                        <TitledPane animated="false" text="Array667">
+                                             <content>
+                                                <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <TextField fx:id="arraygm" layoutX="25.0" layoutY="109.0" promptText="array" />
+                                                      <Text layoutX="42.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="1113.01708984375" />
+                                                      <Label layoutX="25.0" layoutY="18.0" prefHeight="80.0" prefWidth="1114.0" text="Dada una matriz de entradas, devuelve el número de veces&#10; que dos 6 están uno al lado del otro en la matriz. &#10;También cuente las instancias donde el segundo &quot;6&quot; es &#10;en realidad un 7." />
+                                                      <Button fx:id="gogm" layoutX="303.0" layoutY="109.0" mnemonicParsing="false" onAction="#gogm" text="Go" />
+                                                      <Label layoutX="25.0" layoutY="204.0" text="Resultado:" />
+                                                      <Label fx:id="labelgm" layoutX="92.0" layoutY="204.0" prefHeight="17.0" prefWidth="116.0" />
+                                                   </children>
+                                                </AnchorPane>
+                                             </content>
+                                        </TitledPane>
                                       </panes>
                                     </Accordion>
                                  </children></AnchorPane>
