@@ -16,11 +16,11 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     @FXML
-    TextField cad_warm1,cad_warm2,A1,A2,B1,B2,cad_warmup2,RR1,RR2,R3,ioq1,ioq2,ioq3,arraygm, A, AB, B;
+    TextField cad_warm1,cad_warm2,A1,A2,B1,B2,cad_warmup2,RR1,RR2,R3,ioq1,ioq2,ioq3,arraygm, A, AB, B, teen1, teen2, res_teenSum;
     @FXML
     Label reWarm1,reIoq, labelgm;
     @FXML
-    Button btnGO,btnYAK,gogm, btnMap;
+    Button btnGO,btnYAK,gogm, btnMap, btnTeen;
 
 
     public void last3(KeyEvent keyEvent) {
@@ -42,6 +42,9 @@ public class Controller implements Initializable {
             if(event.getSource() == btnMap){
                 mapAB();
             }
+            if(event.getSource() == btnTeen){
+                teenSum();
+            }
         }
     };
 
@@ -59,6 +62,16 @@ public class Controller implements Initializable {
             RR1.setText(String.valueOf(R[0]));
             RR2.setText(String.valueOf(R[1]));
             R3.setText(String.valueOf(R[0]+R[1]));
+    }
+
+    public void teenSum(){
+        int a=Integer.parseInt(teen1.getText());
+        int b=Integer.parseInt(teen2.getText());
+        if(a>=13 && a<=19 || b>=13 && b<=19){
+            res_teenSum.setText("19");
+        }else{
+            res_teenSum.setText((a+b)+"");
+        }
     }
 
     public void mapAB(){
@@ -82,6 +95,7 @@ public class Controller implements Initializable {
         btnYAK.setOnAction(handler);
         btnGO.setOnAction(handler);
         btnMap.setOnAction(handler);
+        btnTeen.setOnAction(handler);
     }
 
     public void logic1(ActionEvent actionEvent) {
