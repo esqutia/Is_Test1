@@ -137,9 +137,19 @@
                            </content>
                         </Tab>
                         <Tab text="Map 1">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                           </content>
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <Label layoutX="50.0" layoutY="77.0" text="A:" />
+                                        <Label layoutX="140.0" layoutY="77.0" text="AB:" />
+                                        <Label layoutX="230.0" layoutY="77.0" text="B:" />
+                                        <TextField fx:id="A" layoutX="50.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" promptText="null" />
+                                        <TextField fx:id="AB" layoutX="140.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" editable="false" promptText="null" />
+                                        <TextField fx:id="B" layoutX="230.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" promptText="null" />
+                                        <Button fx:id="btnMap" layoutX="290.0" layoutY="97.0" mnemonicParsing="false" text="Modificar" />
+                                    </children>
+                                </AnchorPane>
+                            </content>
                         </Tab>
                     </tabs>
                   </TabPane>

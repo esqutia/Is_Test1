@@ -10,15 +10,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     @FXML
-    TextField cad_warm1,cad_warm2,A1,A2,B1,B2,cad_warmup2,RR1,RR2,R3,ioq1,ioq2,ioq3,arraygm;
+    TextField cad_warm1,cad_warm2,A1,A2,B1,B2,cad_warmup2,RR1,RR2,R3,ioq1,ioq2,ioq3,arraygm, A, AB, B;
     @FXML
     Label reWarm1,reIoq, labelgm;
     @FXML
-    Button btnGO,btnYAK,gogm;
+    Button btnGO,btnYAK,gogm, btnMap;
 
 
     public void last3(KeyEvent keyEvent) {
@@ -36,6 +38,9 @@ public class Controller implements Initializable {
             }
             if(event.getSource() == btnYAK){
                 yak();
+            }
+            if(event.getSource() == btnMap){
+                mapAB();
             }
         }
     };
@@ -56,10 +61,27 @@ public class Controller implements Initializable {
             R3.setText(String.valueOf(R[0]+R[1]));
     }
 
+    public void mapAB(){
+        MapAB mapa=new MapAB();
+        Map<String, String> map = new HashMap<String, String>();
+        String a, b;
+        a=this.A.getText();
+        b=this.B.getText();
+        if (a.length()>0)
+            map.put("a", a);
+        if (b.length()>0)
+            map.put("b", b);
+        map=mapa.mapAB(map);
+        this.A.setText(map.get("a"));
+        this.B.setText(map.get("b"));
+        this.AB.setText(map.get("ab"));
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         btnYAK.setOnAction(handler);
         btnGO.setOnAction(handler);
+        btnMap.setOnAction(handler);
     }
 
     public void logic1(ActionEvent actionEvent) {
