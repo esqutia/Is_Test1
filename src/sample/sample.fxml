@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <TitledPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="526.0" text="Test 1 Ingenieria de Software">
         <content>
@@ -40,6 +40,7 @@
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
+                                    <Button layoutX="393.0" layoutY="89.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="97.0" text="Solucion" />
                                  </children></AnchorPane>
                         </content>
                       </Tab>
@@ -60,6 +61,7 @@
                                                       <TextField fx:id="cad_warmup2" editable="false" layoutX="34.0" layoutY="233.0" prefHeight="25.0" prefWidth="181.0" />
                                                       <Button fx:id="btnYAK" layoutX="335.0" layoutY="145.0" mnemonicParsing="false" text="GO" />
                                                   <AnchorPane layoutX="10.0" layoutY="-38.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                                      <Button layoutX="419.0" layoutY="25.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="74.0" text="Solucion" />
                                                    </children>
                                                 </AnchorPane>
                                           </content>
@@ -74,6 +76,7 @@
                                                       <Button fx:id="gogm" layoutX="303.0" layoutY="109.0" mnemonicParsing="false" onAction="#gogm" text="Go" />
                                                       <Label layoutX="25.0" layoutY="204.0" text="Resultado:" />
                                                       <Label fx:id="labelgm" layoutX="92.0" layoutY="204.0" prefHeight="17.0" prefWidth="116.0" />
+                                                      <Button layoutX="411.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="84.0" text="Solucion" />
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -108,7 +111,7 @@
                                         </TitledPane>
                                           <TitledPane text="Teen Sum">
                                               <content>
-                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" >
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                       <children>
                                                           <Label layoutX="14.0" layoutY="69.0" prefHeight="17.0" prefWidth="150.0" text="Ingresar los valores a sumar:" />
                                                           <TextField fx:id="teen1" layoutX="15.0" layoutY="93.0" prefHeight="25.0" prefWidth="180.0" promptText="primer numero" />
@@ -153,7 +156,7 @@
                                         <Label layoutX="140.0" layoutY="77.0" text="AB:" />
                                         <Label layoutX="230.0" layoutY="77.0" text="B:" />
                                         <TextField fx:id="A" layoutX="50.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" promptText="null" />
-                                        <TextField fx:id="AB" layoutX="140.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" editable="false" promptText="null" />
+                                        <TextField fx:id="AB" editable="false" layoutX="140.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" promptText="null" />
                                         <TextField fx:id="B" layoutX="230.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" promptText="null" />
                                         <Button fx:id="btnMap" layoutX="290.0" layoutY="97.0" mnemonicParsing="false" text="Modificar" />
                                     </children>
