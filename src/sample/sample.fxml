@@ -40,7 +40,7 @@
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Button layoutX="393.0" layoutY="89.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="97.0" text="Solucion" />
+                                    <Button fx:id="solWarm" layoutX="393.0" layoutY="89.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="97.0" text="Solucion" onAction="#solWarm"/>
                                  </children></AnchorPane>
                         </content>
                       </Tab>
@@ -61,7 +61,7 @@
                                                       <TextField fx:id="cad_warmup2" editable="false" layoutX="34.0" layoutY="233.0" prefHeight="25.0" prefWidth="181.0" />
                                                       <Button fx:id="btnYAK" layoutX="335.0" layoutY="145.0" mnemonicParsing="false" text="GO" />
                                                   <AnchorPane layoutX="10.0" layoutY="-38.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                      <Button layoutX="419.0" layoutY="25.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="74.0" text="Solucion" />
+                                                      <Button fx:id="solYak" layoutX="419.0" layoutY="25.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="74.0" text="Solucion" />
                                                    </children>
                                                 </AnchorPane>
                                           </content>
@@ -76,7 +76,7 @@
                                                       <Button fx:id="gogm" layoutX="303.0" layoutY="109.0" mnemonicParsing="false" onAction="#gogm" text="Go" />
                                                       <Label layoutX="25.0" layoutY="204.0" text="Resultado:" />
                                                       <Label fx:id="labelgm" layoutX="92.0" layoutY="204.0" prefHeight="17.0" prefWidth="116.0" />
-                                                      <Button layoutX="411.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="84.0" text="Solucion" />
+                                                      <Button fx:id="solArra" layoutX="411.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="84.0" text="Solucion" />
                                                    </children>
                                                 </AnchorPane>
                                              </content>

@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -20,7 +21,7 @@ public class Controller implements Initializable {
     @FXML
     Label reWarm1,reIoq, labelgm;
     @FXML
-    Button btnGO,btnYAK,gogm, btnMap, btnTeen;
+    Button btnGO,btnYAK,gogm, btnMap, btnTeen,solWarm,solYak,solArra;
 
 
     public void last3(KeyEvent keyEvent) {
@@ -118,5 +119,20 @@ public class Controller implements Initializable {
         Warmup2 wu = new Warmup2();
         labelgm.setText(""+wu.array667(entrada));
 
+    }
+
+    public void solWarm(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Información");
+        alert.setHeaderText("Solución original propuesta por Coding Bat");
+        alert.setContentText("public String endUp(String str) {\n" +
+                "  if (str.length() <= 3) return str.toUpperCase();\n" +
+                "  int cut = str.length() - 3;\n" +
+                "  String front = str.substring(0, cut);\n" +
+                "  String back  = str.substring(cut);  // this takes from cut to the end\n" +
+                "  \n" +
+                "  return front + back.toUpperCase();\n" +
+                "}");
+        alert.showAndWait();
     }
 }
