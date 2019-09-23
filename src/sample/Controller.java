@@ -121,18 +121,45 @@ public class Controller implements Initializable {
 
     }
 
-    public void solWarm(ActionEvent actionEvent) {
+    public void solucion(ActionEvent actionEvent) {
+        Button boton=(Button)(actionEvent.getSource());
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Información");
         alert.setHeaderText("Solución original propuesta por Coding Bat");
-        alert.setContentText("public String endUp(String str) {\n" +
-                "  if (str.length() <= 3) return str.toUpperCase();\n" +
-                "  int cut = str.length() - 3;\n" +
-                "  String front = str.substring(0, cut);\n" +
-                "  String back  = str.substring(cut);  // this takes from cut to the end\n" +
-                "  \n" +
-                "  return front + back.toUpperCase();\n" +
-                "}");
+        switch(boton.getId()) {
+            case "solWarm":
+                alert.setTitle("Warm");
+                alert.setContentText("public String endUp(String str) {\n" +
+                        "  if (str.length() <= 3) return str.toUpperCase();\n" +
+                        "  int cut = str.length() - 3;\n" +
+                        "  String front = str.substring(0, cut);\n" +
+                        "  String back  = str.substring(cut);  // this takes from cut to the end\n" +
+                        "  \n" +
+                        "  return front + back.toUpperCase();\n" +
+                        "}");
+                break;
+            case "solYak":
+                alert.setTitle("Yak");
+                alert.setContentText("public String endUp(String str) {\n" +
+                        "  if (str.length() <= 3) return str.toUpperCase();\n" +
+                        "  int cut = str.length() - 3;\n" +
+                        "  String front = str.substring(0, cut);\n" +
+                        "  String back  = str.substring(cut);  // this takes from cut to the end\n" +
+                        "  \n" +
+                        "  return front + back.toUpperCase();\n" +
+                        "}");
+                break;
+            case "solArra":
+                alert.setTitle("Array");
+                alert.setContentText("public String endUp(String str) {\n" +
+                        "  if (str.length() <= 3) return str.toUpperCase();\n" +
+                        "  int cut = str.length() - 3;\n" +
+                        "  String front = str.substring(0, cut);\n" +
+                        "  String back  = str.substring(cut);  // this takes from cut to the end\n" +
+                        "  \n" +
+                        "  return front + back.toUpperCase();\n" +
+                        "}");
+                break;
+        }
         alert.showAndWait();
     }
 }
