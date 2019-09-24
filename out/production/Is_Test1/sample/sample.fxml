@@ -40,7 +40,7 @@
                                           <Font name="System Bold" size="13.0" />
                                        </font>
                                     </Label>
-                                    <Button fx:id="solWarm" layoutX="393.0" layoutY="89.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="97.0" text="Solucion" onAction="#solWarm"/>
+                                    <Button fx:id="solWarm" layoutX="393.0" layoutY="89.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="97.0" text="Solucion" onAction="#solucion"/>
                                  </children></AnchorPane>
                         </content>
                       </Tab>
@@ -61,7 +61,7 @@
                                                       <TextField fx:id="cad_warmup2" editable="false" layoutX="34.0" layoutY="233.0" prefHeight="25.0" prefWidth="181.0" />
                                                       <Button fx:id="btnYAK" layoutX="335.0" layoutY="145.0" mnemonicParsing="false" text="GO" />
                                                   <AnchorPane layoutX="10.0" layoutY="-38.0" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                                                      <Button fx:id="solYak" layoutX="419.0" layoutY="25.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="74.0" text="Solucion" />
+                                                      <Button fx:id="solYak" layoutX="419.0" layoutY="25.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="74.0" text="Solucion" onAction="#solucion"/>
                                                    </children>
                                                 </AnchorPane>
                                           </content>
@@ -76,7 +76,7 @@
                                                       <Button fx:id="gogm" layoutX="303.0" layoutY="109.0" mnemonicParsing="false" onAction="#gogm" text="Go" />
                                                       <Label layoutX="25.0" layoutY="204.0" text="Resultado:" />
                                                       <Label fx:id="labelgm" layoutX="92.0" layoutY="204.0" prefHeight="17.0" prefWidth="116.0" />
-                                                      <Button fx:id="solArra" layoutX="411.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="84.0" text="Solucion" />
+                                                      <Button fx:id="solArra" layoutX="411.0" layoutY="27.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="84.0" text="Solucion" onAction="#solucion"/>
                                                    </children>
                                                 </AnchorPane>
                                              </content>
@@ -130,35 +130,57 @@
                         </Tab>
                         <Tab text="Array 1">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <Label layoutX="14.0" layoutY="14.0" prefHeight="21.0" prefWidth="482.0" text="Comienza con 2 arreglos, a y b, de longitud 2. Considere el valor de la suma de cada" wrapText="true" />
-                                    <Label layoutX="14.0" layoutY="40.0" lineSpacing="1.0" prefHeight="17.0" prefWidth="486.0" text="arreglo. Regrese el arreglo con la suma mas grande. En caso de empate regrese a" wrapText="true" />
-                                    <TextField fx:id="A1" layoutX="14.0" layoutY="97.0" prefHeight="25.0" prefWidth="39.0" promptText="1" />
-                                    <Label layoutX="14.0" layoutY="77.0" text="A:" />
-                                    <Label layoutX="169.0" layoutY="77.0" text="B:" />
-                                    <TextField fx:id="A2" layoutX="56.0" layoutY="97.0" prefHeight="25.0" prefWidth="40.0" promptText="2" />
-                                    <TextField fx:id="B1" layoutX="169.0" layoutY="97.0" prefHeight="25.0" prefWidth="36.0" promptText="1" />
-                                    <TextField fx:id="B2" layoutX="213.0" layoutY="97.0" prefHeight="25.0" prefWidth="33.0" promptText="2" />
-                                    <Button fx:id="btnGO" layoutX="293.0" layoutY="97.0" mnemonicParsing="false" text="GO" />
-                                    <Label layoutX="11.0" layoutY="170.0" prefHeight="17.0" prefWidth="87.0" text="Suma Mayor:" />
-                                    <TextField fx:id="RR1" editable="false" layoutX="11.0" layoutY="195.0" prefHeight="25.0" prefWidth="37.0" />
-                                    <TextField fx:id="RR2" editable="false" layoutX="56.0" layoutY="195.0" prefHeight="25.0" prefWidth="41.0" />
-                                    <TextField fx:id="R3" editable="false" layoutX="113.0" layoutY="195.0" prefHeight="25.0" prefWidth="83.0" />
-                                 </children></AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                <children>
+                                    <Accordion prefHeight="366.0" prefWidth="504.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                        <panes>
+                                            <TitledPane text="biggerTWO">
+                                                <content>
+                                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                     <children>
+                                                        <Label layoutX="14.0" layoutY="14.0" prefHeight="21.0" prefWidth="482.0" text="Comienza con 2 arreglos, a y b, de longitud 2. Considere el valor de la suma de cada" wrapText="true" />
+                                                        <Label layoutX="14.0" layoutY="40.0" lineSpacing="1.0" prefHeight="17.0" prefWidth="486.0" text="arreglo. Regrese el arreglo con la suma mas grande. En caso de empate regrese a" wrapText="true" />
+                                                        <TextField fx:id="A1" layoutX="14.0" layoutY="97.0" prefHeight="25.0" prefWidth="39.0" promptText="1" />
+                                                        <Label layoutX="14.0" layoutY="77.0" text="A:" />
+                                                        <Label layoutX="169.0" layoutY="77.0" text="B:" />
+                                                        <TextField fx:id="A2" layoutX="56.0" layoutY="97.0" prefHeight="25.0" prefWidth="40.0" promptText="2" />
+                                                        <TextField fx:id="B1" layoutX="169.0" layoutY="97.0" prefHeight="25.0" prefWidth="36.0" promptText="1" />
+                                                        <TextField fx:id="B2" layoutX="213.0" layoutY="97.0" prefHeight="25.0" prefWidth="33.0" promptText="2" />
+                                                        <Button fx:id="btnGO" layoutX="293.0" layoutY="97.0" mnemonicParsing="false" text="GO" />
+                                                        <Label layoutX="11.0" layoutY="170.0" prefHeight="17.0" prefWidth="87.0" text="Suma Mayor:" />
+                                                        <TextField fx:id="RR1" editable="false" layoutX="11.0" layoutY="195.0" prefHeight="25.0" prefWidth="37.0" />
+                                                        <TextField fx:id="RR2" editable="false" layoutX="56.0" layoutY="195.0" prefHeight="25.0" prefWidth="41.0" />
+                                                        <TextField fx:id="R3" editable="false" layoutX="113.0" layoutY="195.0" prefHeight="25.0" prefWidth="83.0" />
+                                                     </children></AnchorPane>
+                                               </content>
+                                            </TitledPane>
+                                        </panes>
+                                    </Accordion>
+                                </children>
+                            </AnchorPane>
                            </content>
                         </Tab>
                         <Tab text="Map 1">
                             <content>
                                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                     <children>
-                                        <Label layoutX="50.0" layoutY="77.0" text="A:" />
-                                        <Label layoutX="140.0" layoutY="77.0" text="AB:" />
-                                        <Label layoutX="230.0" layoutY="77.0" text="B:" />
-                                        <TextField fx:id="A" layoutX="50.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" promptText="null" />
-                                        <TextField fx:id="AB" editable="false" layoutX="140.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" promptText="null" />
-                                        <TextField fx:id="B" layoutX="230.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" promptText="null" />
-                                        <Button fx:id="btnMap" layoutX="290.0" layoutY="97.0" mnemonicParsing="false" text="Modificar" />
+                                        <Accordion prefHeight="366.0" prefWidth="504.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <panes>
+                                                <TitledPane text="mapAB">
+                                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                        <children>
+                                                            <Label layoutX="50.0" layoutY="77.0" text="A:" />
+                                                            <Label layoutX="140.0" layoutY="77.0" text="AB:" />
+                                                            <Label layoutX="230.0" layoutY="77.0" text="B:" />
+                                                            <TextField fx:id="A" layoutX="50.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" promptText="null" />
+                                                            <TextField fx:id="AB" editable="false" layoutX="140.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" promptText="null" />
+                                                            <TextField fx:id="B" layoutX="230.0" layoutY="97.0" prefHeight="25.0" prefWidth="70.0" promptText="null" />
+                                                            <Button fx:id="btnMap" layoutX="290.0" layoutY="97.0" mnemonicParsing="false" text="Modificar" />
+                                                        </children>
+                                                    </AnchorPane>
+                                                </TitledPane>
+                                            </panes>
+                                        </Accordion>
                                     </children>
                                 </AnchorPane>
                             </content>

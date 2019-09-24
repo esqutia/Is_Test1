@@ -121,18 +121,55 @@ public class Controller implements Initializable {
 
     }
 
-    public void solWarm(ActionEvent actionEvent) {
+    public void solucion(ActionEvent actionEvent) {
+        Button boton=(Button)(actionEvent.getSource());
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Información");
         alert.setHeaderText("Solución original propuesta por Coding Bat");
-        alert.setContentText("public String endUp(String str) {\n" +
-                "  if (str.length() <= 3) return str.toUpperCase();\n" +
-                "  int cut = str.length() - 3;\n" +
-                "  String front = str.substring(0, cut);\n" +
-                "  String back  = str.substring(cut);  // this takes from cut to the end\n" +
-                "  \n" +
-                "  return front + back.toUpperCase();\n" +
-                "}");
+        switch(boton.getId()) {
+            case "solWarm":
+                alert.setTitle("Warm");
+                alert.setContentText("public String endUp(String str) {\n" +
+                        "  if (str.length() <= 3) return str.toUpperCase();\n" +
+                        "  int cut = str.length() - 3;\n" +
+                        "  String front = str.substring(0, cut);\n" +
+                        "  String back  = str.substring(cut);  // this takes from cut to the end\n" +
+                        "  \n" +
+                        "  return front + back.toUpperCase();\n" +
+                        "}");
+                break;
+            case "solYak":
+                alert.setTitle("Yak");
+                alert.setContentText("public String stringYak(String str) {\n" +
+                        "  String result = \"\";\n" +
+                        "  \n" +
+                        "  for (int i=0; i<str.length(); i++) {\n" +
+                        "    // Look for i starting a \"yak\" -- advance i in that case\n" +
+                        "    if (i+2<str.length() && str.charAt(i)=='y' && str.charAt(i+2)=='k') {\n" +
+                        "      i =  i + 2;\n" +
+                        "    } else { // Otherwise do the normal append\n" +
+                        "      result = result + str.charAt(i);\n" +
+                        "    }\n" +
+                        "  }\n" +
+                        "  \n" +
+                        "  return result;\n" +
+                        "}");
+                break;
+            case "solArra":
+                alert.setTitle("Array");
+                alert.setContentText("public int array667(int[] nums) {\n" +
+                        "  int count = 0;\n" +
+                        "  // Note: iterate to length-1, so can use i+1 in the loop\n" +
+                        "  for (int i=0; i < (nums.length-1); i++) {\n" +
+                        "    if (nums[i] == 6) {\n" +
+                        "      if (nums[i+1] == 6 || nums[i+1] == 7) {\n" +
+                        "        count++;\n" +
+                        "      }\n" +
+                        "    }\n" +
+                        "  }\n" +
+                        "  return count;\n" +
+                        "}");
+                break;
+        }
         alert.showAndWait();
     }
 }
