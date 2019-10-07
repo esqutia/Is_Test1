@@ -4,11 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.GridPane;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -123,12 +121,25 @@ public class Controller implements Initializable {
 
     public void solucion(ActionEvent actionEvent) {
         Button boton=(Button)(actionEvent.getSource());
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Solución original propuesta por Coding Bat");
+        Dialog<String> dialog = new Dialog<>();
+        dialog.setTitle("Solution");
+        dialog.setHeaderText("Comparacion de soluciones\nCodingBat|OpenessTeam");
+        dialog.setWidth(600);
+        dialog.setHeight(250);
+
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+
+        ButtonType Acept = new ButtonType("Aceptar", ButtonBar.ButtonData.OK_DONE);
+        dialog.getDialogPane().getButtonTypes().addAll(Acept, ButtonType.CANCEL);
+
+        Label lblcb = new Label();
+        Label lblot = new Label();
+
         switch(boton.getId()) {
             case "solWarm":
-                alert.setTitle("Warm");
-                alert.setContentText("public String endUp(String str) {\n" +
+                lblcb.setText("public String endUp(String str) {\n" +
                         "  if (str.length() <= 3) return str.toUpperCase();\n" +
                         "  int cut = str.length() - 3;\n" +
                         "  String front = str.substring(0, cut);\n" +
@@ -136,10 +147,20 @@ public class Controller implements Initializable {
                         "  \n" +
                         "  return front + back.toUpperCase();\n" +
                         "}");
+                lblot.setText("public String conversion(String str) {\n" +
+                        "        if (str.length() <= 3) return str.toUpperCase();\n" +
+                        "        int cut = str.length() - 3;\n" +
+                        "        String front = str.substring(0, cut);\n" +
+                        "        String back  = str.substring(cut);\n" +
+                        "        return front + back.toUpperCase();\n" +
+                        "    }");
+                grid.add(lblcb,0,0);
+                grid.add(lblot,1,0);
+                dialog.getDialogPane().setContent(grid);
+                dialog.show();
                 break;
             case "solYak":
-                alert.setTitle("Yak");
-                alert.setContentText("public String stringYak(String str) {\n" +
+                lblcb.setText("public String stringYak(String str) {\n" +
                         "  String result = \"\";\n" +
                         "  \n" +
                         "  for (int i=0; i<str.length(); i++) {\n" +
@@ -153,10 +174,26 @@ public class Controller implements Initializable {
                         "  \n" +
                         "  return result;\n" +
                         "}");
+                lblot.setText("public String stringYak(String str) {\n" +
+                        "        String tmp=\"\";\n" +
+                        "        int i=0;\n" +
+                        "        while(i<str.length()){\n" +
+                        "            if(i+2<str.length() && str.charAt(i)=='y' && str.charAt(i+1)=='a' && str.charAt(i+2)=='k'){\n" +
+                        "                i=i+3;\n" +
+                        "            }else{\n" +
+                        "                tmp=tmp+str.charAt(i);\n" +
+                        "                i++;\n" +
+                        "            }\n" +
+                        "        }\n" +
+                        "        return tmp;\n" +
+                        "    }");
+                grid.add(lblcb,0,0);
+                grid.add(lblot,1,0);
+                dialog.getDialogPane().setContent(grid);
+                dialog.show();
                 break;
             case "solArra":
-                alert.setTitle("Array");
-                alert.setContentText("public int array667(int[] nums) {\n" +
+                lblcb.setText("public int array667(int[] nums) {\n" +
                         "  int count = 0;\n" +
                         "  // Note: iterate to length-1, so can use i+1 in the loop\n" +
                         "  for (int i=0; i < (nums.length-1); i++) {\n" +
@@ -168,8 +205,25 @@ public class Controller implements Initializable {
                         "  }\n" +
                         "  return count;\n" +
                         "}");
+                lblot.setText("public int array667(int[] nums) {\n" +
+                        "        int count = 0;\n" +
+                        "        for (int i=0; i < (nums.length-1); i++) {\n" +
+                        "            if (nums[i] == 6) {\n" +
+                        "                if (nums[i+1] == 6 || nums[i+1] == 7) {\n" +
+                        "                    count++;\n" +
+                        "                    System.out.println(nums[i]);\n" +
+                        "                    System.out.println(nums[i+1]);\n" +
+                        "                    System.out.println(nums[count]);\n" +
+                        "                }\n" +
+                        "            }\n" +
+                        "        }\n" +
+                        "        return count;\n" +
+                        "    }");
+                grid.add(lblcb,0,0);
+                grid.add(lblot,1,0);
+                dialog.getDialogPane().setContent(grid);
+                dialog.show();
                 break;
         }
-        alert.showAndWait();
     }
 }
