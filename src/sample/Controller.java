@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Orientation;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
@@ -131,6 +132,9 @@ public class Controller implements Initializable {
         grid.setHgap(10);
         grid.setVgap(10);
 
+        Separator sep = new Separator();
+        sep.setOrientation(Orientation.VERTICAL);
+
         ButtonType Acept = new ButtonType("Aceptar", ButtonBar.ButtonData.OK_DONE);
         dialog.getDialogPane().getButtonTypes().addAll(Acept, ButtonType.CANCEL);
 
@@ -155,7 +159,8 @@ public class Controller implements Initializable {
                         "        return front + back.toUpperCase();\n" +
                         "    }");
                 grid.add(lblcb,0,0);
-                grid.add(lblot,1,0);
+                grid.add(sep,1,0);
+                grid.add(lblot,2,0);
                 dialog.getDialogPane().setContent(grid);
                 dialog.show();
                 break;
@@ -188,7 +193,8 @@ public class Controller implements Initializable {
                         "        return tmp;\n" +
                         "    }");
                 grid.add(lblcb,0,0);
-                grid.add(lblot,1,0);
+                grid.add(sep,1,0);
+                grid.add(lblot,2,0);
                 dialog.getDialogPane().setContent(grid);
                 dialog.show();
                 break;
@@ -220,7 +226,8 @@ public class Controller implements Initializable {
                         "        return count;\n" +
                         "    }");
                 grid.add(lblcb,0,0);
-                grid.add(lblot,1,0);
+                grid.add(sep,1,0);
+                grid.add(lblot,2,0);
                 dialog.getDialogPane().setContent(grid);
                 dialog.show();
                 break;
